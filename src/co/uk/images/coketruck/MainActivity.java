@@ -71,6 +71,17 @@ public class MainActivity extends Activity {
             super(context);
             loadUrl("http://10.254.26.28:8888/front.gif");
         }
+        @Override
+        protected void onDraw(Canvas canvas){
+
+        }
+    }
+
+    public class GifView extends View{
+
+        public GifView(Context context) {
+            super(context);
+        }
     }
 
 }
