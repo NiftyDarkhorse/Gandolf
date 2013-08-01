@@ -32,7 +32,7 @@
     <ignored path="coketruck.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../processing/src/uk/co/images/coketruck/coketruck.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1374855509168" ignored="false" />
-    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375368445764" ignored="false" />
+    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375369856756" ignored="false" />
     <file path="/fragment.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375197415280" ignored="false" />
     <file path="/main.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375119352410" ignored="false" />
     <file path="$PROJECT_DIR$/src/co/uk/images/coketruck/GetGifFromNetwork.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375197690207" ignored="false" />
@@ -100,7 +100,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="72" column="53" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.36491936">
+            <state line="32" column="32" selection-start="852" selection-end="852" vertical-scroll-proportion="0.45362905">
               <folding />
             </state>
           </provider>
@@ -659,7 +659,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="72" column="53" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.36491936">
+        <state line="32" column="32" selection-start="852" selection-end="852" vertical-scroll-proportion="0.45362905">
           <folding />
         </state>
       </provider>

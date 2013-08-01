@@ -14,8 +14,7 @@ import java.io.InputStream;
 import java.net.URL;
 
 public class MainActivity extends Activity {
-
-    Movie movie;
+    Movie [] bothMovies;
     Canvas animationCanvasOne;
     View thisView;
     /**
@@ -24,7 +23,13 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WebView view = new GifWebView(this);
+        bothMovies = new Movie[2];
+        GifView view = new GifView(this);
+
+        //This is no good:
+        @Deprecated
+        WebView theWebView = new GifWebView(this);
+
         setContentView(view);
 
 //        main = new Canvas();
@@ -38,31 +43,29 @@ public class MainActivity extends Activity {
 
     }
 
-    class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie> {
-        protected Movie doInBackground(Void... objects) {
+    class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie[]> {
+        protected Movie[] doInBackground(Void... objects) {
             InputStream in;
+
             try {
                 in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                movie = Movie.decodeStream(in);
-                return movie;
+                movie1 = Movie.decodeStream(in);
+                in = new URL("http://10.254.26.28:8888/front.gif").openStream();
+                movie2 = Movie.decodeStream(in);
+                Movie[] moviearray = {movie1, movie2};
+                return moviearray;
             }
             catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
+                e.printStackTrace();
 
             }
             return null;
-
-              //To change body of implemented methods use File | Settings | File Templates.
         }
 
         @Override
-        protected void onPostExecute(Movie io) {
-            super.onPostExecute(io);    //To change body of overridden methods use File | Settings | File Templates.
+        protected void onPostExecute(Movie[] io) {
+            super.onPostExecute(io);
 
-
-            movie.draw(animationCanvasOne, 200,200);
-            thisView.invalidate();
-            System.out.println("Gif loaded");
         }
     }
     public class GifWebView extends WebView {
@@ -80,8 +83,11 @@ public class MainActivity extends Activity {
     public class GifView extends View{
 
         public GifView(Context context) {
+
             super(context);
+            new GetGifFromNetwork().execute();
         }
+
     }
 
 }
