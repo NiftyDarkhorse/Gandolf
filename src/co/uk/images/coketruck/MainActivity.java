@@ -26,7 +26,7 @@ public class MainActivity extends Activity {
         bothMovies = new Movie[2];
         GifView view = new GifView(this);
 
-        //This is no good:
+        //This is no good, as I'm not able to change the GIF afterwards:
         @Deprecated
         WebView theWebView = new GifWebView(this);
 
@@ -49,11 +49,10 @@ public class MainActivity extends Activity {
 
             try {
                 in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                movie1 = Movie.decodeStream(in);
-                in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                movie2 = Movie.decodeStream(in);
-                Movie[] moviearray = {movie1, movie2};
-                return moviearray;
+                Movie movie1 = Movie.decodeStream(in);
+                in = new URL("http://10.254.26.28:8888/back.gif").openStream();
+                Movie movie2 = Movie.decodeStream(in);
+                return new Movie[]{movie1, movie2};
             }
             catch (IOException e) {
                 e.printStackTrace();
@@ -65,6 +64,7 @@ public class MainActivity extends Activity {
         @Override
         protected void onPostExecute(Movie[] io) {
             super.onPostExecute(io);
+            bothMovies = io;
 
         }
     }
