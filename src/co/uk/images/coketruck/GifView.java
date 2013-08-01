@@ -38,6 +38,7 @@ public class GifView extends View {
         super(context, attrs, defStyle);
         new GetGifFromNetwork().execute();
         bothMovies = new Movie[2];
+
     }
     @Override
     protected void onDraw(Canvas canvas){
@@ -53,10 +54,9 @@ public class GifView extends View {
                     relTime = (int)((now - movieStart) % bothMovies[0].duration());
                     bothMovies[0].setTime(relTime);
                     bothMovies[0].draw(canvas,0,0);
-                    this.invalidate();
-                    relTime = (int)((now - movieStart) % bothMovies[1].duration());
-                    bothMovies[1].setTime(relTime);
-                    bothMovies[1].draw(canvas,0,300);
+//                    relTime = (int)((now - movieStart) % bothMovies[1].duration());
+//                    bothMovies[1].setTime(relTime);
+//                    bothMovies[1].draw(canvas,0,300);
                     this.invalidate();
                     done = true;
 
@@ -66,14 +66,14 @@ public class GifView extends View {
     }
     class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie[]> {
         protected Movie[] doInBackground(Void... objects) {
-            InputStream in;
-
+            InputStream in,in2;
+            System.out.println("Getting movie");
             try {
                 in = new URL("http://10.254.26.28:8888/front.gif").openStream();
                 Movie movie1 = Movie.decodeStream(in);
-                in = new URL("http://10.254.26.28:8888/back.gif").openStream();
-                Movie movie2 = Movie.decodeStream(in);
-                return new Movie[]{movie1, movie2};
+//                in2 = new URL("http://10.254.26.28:8888/back.gif").openStream();
+//                Movie movie2 = Movie.decodeStream(in2);
+//                return new Movie[]{movie1, movie2};
             }
             catch (IOException e) {
                 e.printStackTrace();
@@ -86,6 +86,7 @@ public class GifView extends View {
             super.onPostExecute(io);
             processFinish = true;
             bothMovies = io;
+            System.out.println("Process finished");
 
         }
     }
