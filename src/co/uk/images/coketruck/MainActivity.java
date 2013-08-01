@@ -4,8 +4,10 @@ import android.app.Activity;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.graphics.Movie;
+import android.graphics.Paint;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.util.AttributeSet;
 import android.view.View;
 import android.webkit.WebView;
 
@@ -14,7 +16,8 @@ import java.io.InputStream;
 import java.net.URL;
 
 public class MainActivity extends Activity {
-    Movie [] bothMovies;
+
+
     Canvas animationCanvasOne;
     View thisView;
     /**
@@ -23,14 +26,9 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        bothMovies = new Movie[2];
-        GifView view = new GifView(this);
 
-        //This is no good, as I'm not able to change the GIF afterwards:
-        @Deprecated
-        WebView theWebView = new GifWebView(this);
 
-        setContentView(view);
+        setContentView(R.layout.main);
 
 //        main = new Canvas();
 //
@@ -40,53 +38,6 @@ public class MainActivity extends Activity {
 //        thisView.draw(animationCanvasOne);
 //        new GetGifFromNetwork().execute();
 
-
-    }
-
-    class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie[]> {
-        protected Movie[] doInBackground(Void... objects) {
-            InputStream in;
-
-            try {
-                in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                Movie movie1 = Movie.decodeStream(in);
-                in = new URL("http://10.254.26.28:8888/back.gif").openStream();
-                Movie movie2 = Movie.decodeStream(in);
-                return new Movie[]{movie1, movie2};
-            }
-            catch (IOException e) {
-                e.printStackTrace();
-
-            }
-            return null;
-        }
-
-        @Override
-        protected void onPostExecute(Movie[] io) {
-            super.onPostExecute(io);
-            bothMovies = io;
-
-        }
-    }
-    public class GifWebView extends WebView {
-
-        public GifWebView(Context context) {
-            super(context);
-            loadUrl("http://10.254.26.28:8888/front.gif");
-        }
-        @Override
-        protected void onDraw(Canvas canvas){
-
-        }
-    }
-
-    public class GifView extends View{
-
-        public GifView(Context context) {
-
-            super(context);
-            new GetGifFromNetwork().execute();
-        }
 
     }
 

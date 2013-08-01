@@ -5,10 +5,10 @@
               android:layout_height="fill_parent"
               android:id="@+id/mainLayout"
         >
-    <TextView
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Hello World, MainActivity"
-            />
+    <co.uk.images.coketruck.GifView
+            android:layout_marginLeft="0dp" android:layout_gravity="center"
+            android:layout_width="wrap_content" android:layout_height="220dp"
+            android:id="@+id/GIFSingle">
+    </co.uk.images.coketruck.GifView>
 </LinearLayout>
 
