@@ -30,15 +30,6 @@ public class MainActivity extends Activity {
 
         setContentView(R.layout.main);
 
-//        main = new Canvas();
-//
-//
-//        thisView = findViewById(R.id.mainLayout);
-//
-//        thisView.draw(animationCanvasOne);
-//        new GetGifFromNetwork().execute();
-
-
     }
 
 }

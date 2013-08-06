@@ -23,45 +23,68 @@ public class GifView extends View {
     long movieStart = 0;
     boolean processFinish = false;
     Movie [] bothMovies;
+
+    // The following are the three View constructors  that load the Gifs asynchronously from the server...
+
+//    public GifView(Context context) {
+//
+//        super(context);
+//        new GetGifFromNetwork().execute();
+//        bothMovies = new Movie[2];
+//    }
+//    public GifView(Context context, AttributeSet attrs){
+//        super(context, attrs);
+//        new GetGifFromNetwork().execute();
+//        bothMovies = new Movie[2];
+//    }
+//    public GifView(Context context, AttributeSet attrs, int defStyle){
+//        super(context, attrs, defStyle);
+//        new GetGifFromNetwork().execute();
+//        bothMovies = new Movie[2];
+//
+//    }
+
+    // ...and the following three load two test Gifs from the static directories, for debugging purposes.
+
     public GifView(Context context) {
 
         super(context);
-        new GetGifFromNetwork().execute();
-        bothMovies = new Movie[2];
+        bothMovies = new Movie[]
+                {Movie.decodeStream(getResources().openRawResource(R.drawable.back)),
+                        Movie.decodeStream(getResources().openRawResource(R.drawable.front))
+                };
     }
     public GifView(Context context, AttributeSet attrs){
         super(context, attrs);
-        new GetGifFromNetwork().execute();
-        bothMovies = new Movie[2];
+        bothMovies = new Movie[]
+                {Movie.decodeStream(getResources().openRawResource(R.drawable.back)),
+                        Movie.decodeStream(getResources().openRawResource(R.drawable.front))
+                };
     }
     public GifView(Context context, AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
-        new GetGifFromNetwork().execute();
-        bothMovies = new Movie[2];
+        bothMovies = new Movie[]
+                {Movie.decodeStream(getResources().openRawResource(R.drawable.back)),
+                        Movie.decodeStream(getResources().openRawResource(R.drawable.front))
+                };
 
     }
     @Override
     protected void onDraw(Canvas canvas){
-        boolean done= false;
-        while (!done){
-            if(processFinish){
-                long now = android.os.SystemClock.uptimeMillis();
-                Paint p = new Paint();
-                p.setAntiAlias(true);
-                if(movieStart == 0){
-                    movieStart = now;
-                    int relTime;
-                    relTime = (int)((now - movieStart) % bothMovies[0].duration());
-                    bothMovies[0].setTime(relTime);
-                    bothMovies[0].draw(canvas,0,0);
+        super.onDraw(canvas);
+        long now = android.os.SystemClock.uptimeMillis();
+        Paint p = new Paint();
+        p.setAntiAlias(true);
+        if(movieStart == 0){
+            movieStart = now;
+            int relTime;
+            relTime = (int)((now - movieStart) % bothMovies[0].duration());
+            bothMovies[0].setTime(relTime);
+            bothMovies[0].draw(canvas,0,0);
 //                    relTime = (int)((now - movieStart) % bothMovies[1].duration());
 //                    bothMovies[1].setTime(relTime);
 //                    bothMovies[1].draw(canvas,0,300);
-                    this.invalidate();
-                    done = true;
-
-                }
-            }
+            this.invalidate();
         }
     }
     class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie[]> {
@@ -77,6 +100,7 @@ public class GifView extends View {
             }
             catch (IOException e) {
                 e.printStackTrace();
+                System.exit(-1);
 
             }
             return null;
