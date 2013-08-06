@@ -12,13 +12,6 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.net.URL;
 
-/**
- * Created with IntelliJ IDEA.
- * User: franciscodans
- * Date: 01/08/2013
- * Time: 17:40
- * To change this template use File | Settings | File Templates.
- */
 public class GifView extends View {
     long movieStart = 0;
     boolean processFinish = false;
@@ -76,16 +69,16 @@ public class GifView extends View {
         Paint p = new Paint();
         p.setAntiAlias(true);
         if(movieStart == 0){
-            movieStart = now;
-            int relTime;
-            relTime = (int)((now - movieStart) % bothMovies[0].duration());
-            bothMovies[0].setTime(relTime);
-            bothMovies[0].draw(canvas,0,0);
-//                    relTime = (int)((now - movieStart) % bothMovies[1].duration());
-//                    bothMovies[1].setTime(relTime);
-//                    bothMovies[1].draw(canvas,0,300);
-            this.invalidate();
-        }
+            movieStart = now;   }
+        int relTime;
+        relTime = (int)((now - movieStart) % bothMovies[0].duration());
+        bothMovies[0].setTime(relTime);
+        bothMovies[0].draw(canvas,0,0);
+        relTime = (int)((now - movieStart) % bothMovies[1].duration());
+        bothMovies[1].setTime(relTime);
+        bothMovies[1].draw(canvas,0,300);
+        this.invalidate();
+
     }
     class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie[]> {
         protected Movie[] doInBackground(Void... objects) {
