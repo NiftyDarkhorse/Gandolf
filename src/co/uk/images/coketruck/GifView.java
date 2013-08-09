@@ -8,15 +8,17 @@ import android.os.AsyncTask;
 import android.util.AttributeSet;
 import android.view.View;
 
-import java.io.IOException;
-import java.io.InputStream;
+import java.io.*;
 import java.net.URL;
+import java.net.URLConnection;
 
 public class GifView extends View {
     long movieStart = 0;
     boolean processFinish = false;
     Movie [] bothMovies;
+    boolean staticMode = false;
     private boolean done = false;
+    Context ctx;
 
     // The following are the three View constructors  that load the Gifs asynchronously from the server...
 
@@ -25,16 +27,19 @@ public class GifView extends View {
         super(context);
         new GetGifFromNetwork().execute();
         bothMovies = new Movie[2];
+        ctx = context;
     }
     public GifView(Context context, AttributeSet attrs){
         super(context, attrs);
         new GetGifFromNetwork().execute();
         bothMovies = new Movie[2];
+        ctx = context;
     }
     public GifView(Context context, AttributeSet attrs, int defStyle){
         super(context, attrs, defStyle);
         new GetGifFromNetwork().execute();
         bothMovies = new Movie[2];
+        ctx = context;
 
     }
 
@@ -69,14 +74,17 @@ public class GifView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
-        if(processFinish){
+        if(staticMode){
+            System.out.println("Starting stuff, very quickly");
              getTheStuffInTheCanvas(canvas);
         }
         else{
             while(!done){
                 if(processFinish){
+                    System.out.println("Starting stuff");
                     getTheStuffInTheCanvas(canvas);
                     done = true;
+                    staticMode = true;
                 }
             }
         }
@@ -87,24 +95,24 @@ public class GifView extends View {
             InputStream in,in2;
             System.out.println("Getting movie");
             try {
-                in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                Movie movie1 = Movie.decodeStream(in);
-                in2 = new URL("http://10.254.26.28:8888/back.gif").openStream();
-                Movie movie2 = Movie.decodeStream(in2);
-                return new Movie[]{movie1, movie2};
+                Movie movie1 = urlToMovie(new URL("http://10.254.26.28:8888/front.gif"));
+                Movie movie2 = urlToMovie(new URL("http://10.254.26.28:8888/back.gif"));
+                System.out.println("Stream closed");
+                processFinish = true;
+                bothMovies = new Movie[]{movie1, movie2};
+                return bothMovies;
             }
             catch (IOException e) {
                 e.printStackTrace();
-                System.exit(-1);
+                System.out.println("Shit got fucked");
 
             }
             return null;
         }
         @Override
         protected void onPostExecute(Movie[] io) {
+            System.out.println("Post execute...");
             super.onPostExecute(io);
-            processFinish = true;
-            bothMovies = io;
             System.out.println("Process finished");
 
         }
@@ -127,5 +135,16 @@ public class GifView extends View {
         bothMovies[1].setTime(relTime);
         bothMovies[1].draw(canvas,0,300);
         this.invalidate();
+    }
+    protected Movie urlToMovie(URL url) throws IOException {
+
+        URLConnection conn = url.openConnection();
+        InputStream is = conn.getInputStream();
+        BufferedInputStream bis = new BufferedInputStream(is);
+        bis.mark(conn.getContentLength());
+        Movie movie = Movie.decodeStream(bis);
+        bis.close();
+        return movie;
+
     }
 }
