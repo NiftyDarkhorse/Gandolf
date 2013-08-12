@@ -22,23 +22,20 @@
       </GlobalState>
     </option>
   </component>
-  <component name="AndroidLogFilters">
-    <option name="TOOL_WINDOW_CUSTOM_FILTER" value="system.out" />
-  </component>
   <component name="ChangeListManager">
     <list default="true" id="25354edf-4697-4b75-b9e9-de1ef3816c4b" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/co/uk/images/coketruck/GifView.java" afterPath="$PROJECT_DIR$/src/co/uk/images/coketruck/GifView.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" afterPath="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" />
     </list>
     <ignored path="coketruck.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../processing/src/uk/co/images/coketruck/coketruck.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375372818921" ignored="false" />
-    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375374027215" ignored="false" />
+    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1376304114321" ignored="false" />
     <file path="/fragment.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375197415280" ignored="false" />
     <file path="/main.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375377715172" ignored="false" />
     <file path="$PROJECT_DIR$/src/co/uk/images/coketruck/GetGifFromNetwork.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375197690207" ignored="false" />
     <file path="/Dummy.txt" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375874342898" ignored="false" />
-    <file path="/GifView.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1376057064662" ignored="false" />
+    <file path="/GifView.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1376304926714" ignored="false" />
     <file path="/a.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375800434923" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -103,7 +100,7 @@
       <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="30" column="38" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
+            <state line="26" column="48" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -112,7 +109,7 @@
       <file leaf-file-name="GifView.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/GifView.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="131" column="58" selection-start="4421" selection-end="4421" vertical-scroll-proportion="0.51578945">
+            <state line="139" column="47" selection-start="4786" selection-end="4786" vertical-scroll-proportion="0.17322835">
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -180,17 +177,17 @@
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/DisplayGIF.java" />
         <option value="$PROJECT_DIR$/AndroidManifest.xml" />
-        <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
+        <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" />
         <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/GifView.java" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="426" />
-    <option name="y" value="37" />
-    <option name="width" value="1211" />
-    <option name="height" value="924" />
+    <option name="x" value="1869" />
+    <option name="y" value="349" />
+    <option name="width" value="1336" />
+    <option name="height" value="900" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -556,8 +553,8 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="426" y="37" width="1211" height="924" extended-state="0" />
-    <editor active="false" />
+    <frame x="1869" y="349" width="1336" height="900" extended-state="0" />
+    <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
@@ -570,12 +567,12 @@
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.329602" sideWeight="0.49967083" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.31282052" sideWeight="0.49967083" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.32446352" sideWeight="0.670398" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.29302326" sideWeight="0.6871795" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32917705" sideWeight="0.67026377" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
@@ -740,13 +737,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="38" selection-start="728" selection-end="728" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar://$USER_HOME$/android/sdk/platforms/android-17/android.jar!/android/database/sqlite/SQLiteStatement.class">
       <provider selected="true" editor-type-id="text-editor">
         <state line="22" column="0" selection-start="757" selection-end="757" vertical-scroll-proportion="0.0">
@@ -764,9 +754,16 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="26" column="48" selection-start="638" selection-end="638" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/GifView.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="131" column="58" selection-start="4421" selection-end="4421" vertical-scroll-proportion="0.51578945">
+        <state line="139" column="47" selection-start="4786" selection-end="4786" vertical-scroll-proportion="0.17322835">
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

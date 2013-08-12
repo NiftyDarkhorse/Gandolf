@@ -26,8 +26,7 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-
+        System.out.println("App initiated");
         setContentView(R.layout.main);
 
     }

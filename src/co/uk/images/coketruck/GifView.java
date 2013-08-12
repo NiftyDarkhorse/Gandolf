@@ -74,6 +74,7 @@ public class GifView extends View {
     @Override
     protected void onDraw(Canvas canvas){
         super.onDraw(canvas);
+        System.out.println("Drawing view");
         if(staticMode){
             System.out.println("Starting stuff, very quickly");
              getTheStuffInTheCanvas(canvas);
@@ -95,7 +96,9 @@ public class GifView extends View {
             InputStream in,in2;
             System.out.println("Getting movie");
             try {
+                System.out.println("Decoding movie 1");
                 Movie movie1 = urlToMovie(new URL("http://10.254.26.28:8888/front.gif"));
+                System.out.println("Decoding movie 2");
                 Movie movie2 = urlToMovie(new URL("http://10.254.26.28:8888/back.gif"));
                 System.out.println("Stream closed");
                 processFinish = true;
@@ -109,12 +112,12 @@ public class GifView extends View {
             }
             return null;
         }
+
         @Override
         protected void onPostExecute(Movie[] io) {
             System.out.println("Post execute...");
             super.onPostExecute(io);
             System.out.println("Process finished");
-
         }
     }
     protected void getTheStuffInTheCanvas(Canvas canvas){
@@ -136,14 +139,27 @@ public class GifView extends View {
         bothMovies[1].draw(canvas,0,300);
         this.invalidate();
     }
-    protected Movie urlToMovie(URL url) throws IOException {
+    protected Movie urlToMovie(URL url) {
+        System.out.println("Opening connection");
+        URLConnection conn = null;
+        Movie movie = null;
+        try {
+            conn = url.openConnection();
+            System.out.println("Parsing stream");
+            InputStream is = conn.getInputStream();
+            System.out.println("Creating buffer");
+            BufferedInputStream bis = new BufferedInputStream(is);
+            System.out.println("Marking");
+            bis.mark(conn.getContentLength());
+            System.out.println("Decoding to movie");
 
-        URLConnection conn = url.openConnection();
-        InputStream is = conn.getInputStream();
-        BufferedInputStream bis = new BufferedInputStream(is);
-        bis.mark(conn.getContentLength());
-        Movie movie = Movie.decodeStream(bis);
-        bis.close();
+            movie = Movie.decodeStream(bis);
+            bis.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.out.println("Something wrong happened with the decoding");
+        }
+
         return movie;
 
     }
