@@ -26,62 +26,17 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         WebView view = new GifWebView(this);
         setContentView(view);
-
-//        main = new Canvas();
-//
-//
-//        thisView = findViewById(R.id.mainLayout);
-//
-//        thisView.draw(animationCanvasOne);
-//        new GetGifFromNetwork().execute();
-
-
-    }
-
-    class GetGifFromNetwork extends AsyncTask<Void, Integer, Movie> {
-        protected Movie doInBackground(Void... objects) {
-            InputStream in;
-            try {
-                in = new URL("http://10.254.26.28:8888/front.gif").openStream();
-                movie = Movie.decodeStream(in);
-                return movie;
-            }
-            catch (IOException e) {
-                e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
-
-            }
-            return null;
-
-              //To change body of implemented methods use File | Settings | File Templates.
-        }
-
-        @Override
-        protected void onPostExecute(Movie io) {
-            super.onPostExecute(io);    //To change body of overridden methods use File | Settings | File Templates.
-
-
-            movie.draw(animationCanvasOne, 200,200);
-            thisView.invalidate();
-            System.out.println("Gif loaded");
-        }
     }
     public class GifWebView extends WebView {
 
         public GifWebView(Context context) {
             super(context);
             loadUrl("http://10.254.26.28:8888/front.gif");
+            System.out.println("Loaded");
         }
         @Override
         protected void onDraw(Canvas canvas){
 
         }
     }
-
-    public class GifView extends View{
-
-        public GifView(Context context) {
-            super(context);
-        }
-    }
-
 }
