@@ -8,6 +8,7 @@ import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
 import android.webkit.WebView;
+import android.widget.LinearLayout;
 
 import java.io.IOException;
 import java.io.InputStream;
@@ -24,19 +25,14 @@ public class MainActivity extends Activity {
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        WebView view = new GifWebView(this);
-        setContentView(view);
-    }
-    public class GifWebView extends WebView {
+        setContentView(R.layout.main);
+        LinearLayout ll = (LinearLayout) this.findViewById(R.id.mainLayout);
+        WebView view1 = new WebView(this);
+        view1.loadUrl("http://10.254.26.28:8888/front.gif");
+        ll.addView(view1);
+        WebView view2 = new WebView(this);
+        view2.loadUrl("http://10.254.26.28:8888/back.gif");
+        ll.addView(view2);
 
-        public GifWebView(Context context) {
-            super(context);
-            loadUrl("http://10.254.26.28:8888/front.gif");
-            System.out.println("Loaded");
-        }
-        @Override
-        protected void onDraw(Canvas canvas){
-
-        }
     }
 }
