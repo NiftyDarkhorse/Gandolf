@@ -1,18 +1,10 @@
 package co.uk.images.coketruck;
 
 import android.app.Activity;
-import android.app.Notification;
-import android.app.NotificationManager;
-import android.content.Context;
-import android.graphics.Canvas;
-import android.graphics.Movie;
-import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Looper;
-import android.util.AttributeSet;
-import android.view.View;
+import android.view.Window;
 import android.webkit.WebView;
-import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 
 import com.pusher.client.Pusher;
 import com.pusher.client.channel.Channel;
@@ -27,13 +19,14 @@ import java.net.URL;
 
 public class MainActivity extends Activity {
     Pusher pusher;
-    LinearLayout ll;
+    RelativeLayout ll;
     public boolean newGif = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         setContentView(R.layout.main);
-        ll = (LinearLayout) this.findViewById(R.id.mainLayout);
+        ll = (RelativeLayout) this.findViewById(R.id.mainLayout);
         this.enablePusher();
     }
 
@@ -60,11 +53,9 @@ public class MainActivity extends Activity {
                         newGif = true;
                         System.out.println("Invalidating view");
                         WebView view1 = new WebView(MainActivity.this);
-                        view1.loadUrl("http://10.254.26.28:8888/front.gif");
+                        view1.loadUrl("http://10.254.26.69/front.gif");
+                        view1.setLayoutParams(new RelativeLayout.LayoutParams(420,620));
                         ll.addView(view1);
-                        WebView view2 = new WebView(MainActivity.this);
-                        view2.loadUrl("http://10.254.26.28:8888/back.gif");
-                        ll.addView(view2);
                         ll.invalidate();
                         System.out.println("Invalidated");
                     }
