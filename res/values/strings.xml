@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">coketruck</string>
     <color name="red">#B81321</color>
+    <string name="facebook">Share via Facebook</string>
+    <string name="vk">Share via VK</string>
 </resources>

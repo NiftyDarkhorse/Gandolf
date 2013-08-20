@@ -1,11 +1,13 @@
 package co.uk.images.coketruck;
 
 import android.app.Activity;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Window;
 import android.webkit.WebView;
 import android.widget.RelativeLayout;
 
+import android.widget.TextView;
 import com.pusher.client.Pusher;
 import com.pusher.client.channel.Channel;
 import com.pusher.client.channel.SubscriptionEventListener;
@@ -20,14 +22,22 @@ import java.net.URL;
 public class MainActivity extends Activity {
     Pusher pusher;
     RelativeLayout ll;
+    Typeface rt;
     public boolean newGif = false;
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
+        rt = Typeface.createFromAsset(this.getAssets(),"Roboto-Thin.ttf");
         setContentView(R.layout.main);
+        TextView fb = (TextView) findViewById(R.id.facebookText);
+        fb.setTypeface(rt);
+        TextView vk = (TextView) findViewById(R.id.vkText);
+        vk.setTypeface(rt);
         ll = (RelativeLayout) this.findViewById(R.id.mainLayout);
-        this.enablePusher();
+        if (pusher==null){
+            this.enablePusher();
+        }
     }
 
     protected void enablePusher(){
@@ -54,8 +64,10 @@ public class MainActivity extends Activity {
                         System.out.println("Invalidating view");
                         WebView view1 = new WebView(MainActivity.this);
                         view1.loadUrl("http://10.254.26.69/front.gif");
-                        view1.setLayoutParams(new RelativeLayout.LayoutParams(420,620));
-                        ll.addView(view1);
+                        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(420,620);
+                        params.leftMargin = 30;
+                        params.topMargin = 40;
+                        ll.addView(view1, params);
                         ll.invalidate();
                         System.out.println("Invalidated");
                     }
