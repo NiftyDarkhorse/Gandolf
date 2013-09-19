@@ -5,8 +5,6 @@
               android:layout_height="fill_parent"
               android:id="@+id/mainLayout"
               android:background="@color/red"
-              android:descendantFocusability="beforeDescendants"
-              android:focusableInTouchMode="true"
         >
     <ImageView android:src="@drawable/coke"
                android:contentDescription="Coke logo"
@@ -18,30 +16,39 @@
                android:scaleY="0.3">
 
     </ImageView>
-    <ImageButton android:src="@drawable/email"
-                 android:id="@+id/emailButton"
-                     android:contentDescription="Email logo"
+    <ImageButton android:src="@drawable/fb"
+                  android:contentDescription="Facebook logo"
+                  android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:translationY="-50px"
+                  android:background="@android:color/transparent">
+    </ImageButton>
+    <ImageButton android:src="@drawable/vk"
+                     android:contentDescription="Vk logo"
                      android:layout_width="300px"
                      android:layout_height="300px"
                      android:background="@android:color/transparent"
                      android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-                     android:layout_marginTop="160dp">
+                     android:layout_marginTop="280dp">
     </ImageButton>
     <TextView
-            android:id="@+id/emailText"
+              android:id="@+id/facebookText"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/facebook"
+              android:textSize="35sp"
+              android:textColor="#ffffff"
+              android:layout_alignParentLeft="true" android:layout_marginLeft="575dp"
+              android:layout_alignParentTop="true" android:layout_marginTop="200dp">
+    </TextView>
+    <TextView
+            android:id="@+id/vkText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
+            android:text="@string/vk"
             android:textSize="35sp"
             android:textColor="#ffffff"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="585dp"
-            android:layout_alignParentTop="true" android:layout_marginTop="220dp">
+            android:layout_alignParentLeft="true" android:layout_marginLeft="575dp"
+            android:layout_alignParentTop="true" android:layout_marginTop="365dp">
     </TextView>
-    <EditText
-            android:id="@+id/emailEdit"
-            android:layout_width="350px"
-            android:layout_height="60px"
-            android:background="@color/whitet"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="585dp"
-            android:layout_alignParentTop="true" android:layout_marginTop="280dp"></EditText>
 </RelativeLayout>
