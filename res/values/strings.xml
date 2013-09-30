@@ -1,9 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <string name="app_name">coketruck</string>
-    <color name="red">#B81321</color>
+    <color name="red">#f40008</color>
     <color name="whitet">#55ffffff</color>
     <string name="facebook">Share via Facebook</string>
     <string name="vk">Share via VK</string>
     <string name="email">Send to your email</string>
+    <string name="shareandsave">SHARE AND SAVE</string>
+    <string name="save">Save your happiness moment, and share it with your friends and family.</string>
+    <string name="tellusname">Tell us your name...</string>
+    <string name="youremail">Tell us your email...</string>
 </resources>

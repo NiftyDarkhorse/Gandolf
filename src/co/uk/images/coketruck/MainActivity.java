@@ -10,10 +10,7 @@ import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
 import android.webkit.WebView;
-import android.widget.EditText;
-import android.widget.ImageButton;
-import android.widget.RelativeLayout;
-import android.widget.TextView;
+import android.widget.*;
 
 import com.pusher.client.Pusher;
 import com.pusher.client.channel.Channel;
@@ -44,18 +41,30 @@ public class MainActivity extends Activity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
-        rt = Typeface.createFromAsset(this.getAssets(),"Roboto-Thin.ttf");
+        rt = Typeface.createFromAsset(this.getAssets(),"Montserrat-Regular.ttf");
         setContentView(R.layout.main);
         TextView email = (TextView) findViewById(R.id.emailText);
+        ((TextView) findViewById(R.id.textView)).setTypeface(rt);
+
         email.setTypeface(rt);
-        ImageButton emailButton = (ImageButton) findViewById(R.id.emailButton);
+        Button emailButton = (Button) findViewById(R.id.emailButton);
         emailButton.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 if(gotImage){
                     EditText emailField = (EditText) findViewById(R.id.emailEdit);
+                    EditText nameField = (EditText) findViewById(R.id.nameEdit);
                     String emailText = emailField.getText().toString();
-                    String emailReqURL = "http://ccht.imagesstage.co.uk/email.php?session="+sessionID+"&email="+emailText;
-                    new GetURL().execute(emailReqURL);
+                    String nameText = nameField.getText().toString();
+                    if(!emailText.contains("@")){
+                        Toast.makeText(MainActivity.this, "Please use a valid email address", Toast.LENGTH_SHORT).show();
+                    }
+                    else{
+                        String emailReqURL = "http://ccht.imagesstage.co.uk/email.php?session="+sessionID+"&email="+emailText+"&name="+nameText;
+                        Toast.makeText(MainActivity.this, "Sending...", Toast.LENGTH_SHORT).show();
+                        new GetURL().execute(emailReqURL);
+                        emailField.setText("");
+                        nameField.setText("");
+                    }
                 }
             }
         });
@@ -87,6 +96,12 @@ public class MainActivity extends Activity {
 
             return null;  //To change body of implemented methods use File | Settings | File Templates.
         }
+
+        @Override
+        protected void onPostExecute(Void aVoid) {
+            super.onPostExecute(aVoid);
+            Toast.makeText(MainActivity.this, "Thanks! Your happiness moment has been submitted", Toast.LENGTH_SHORT).show();
+        }
     }
     protected void enablePusher(){
         pusher = new Pusher("c0a25a463fbbf294a4a8");
@@ -113,11 +128,16 @@ public class MainActivity extends Activity {
                         String gifURL=data.replace("\"","");
                         sessionID = gifURL;
                         WebView view1 = new WebView(MainActivity.this);
+                        ImageView gifMask = new ImageView(getBaseContext());
+                        gifMask.setImageDrawable(getResources().getDrawable(R.drawable.gifmask));
+
                         view1.loadUrl("http://cocacolahappiness.s3-website-eu-west-1.amazonaws.com/"+gifURL+".gif");
                         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(420,620);
                         params.leftMargin = 30;
                         params.topMargin = 40;
+
                         ll.addView(view1, params);
+                        ll.addView(gifMask, params);
                         ll.invalidate();
                         gotImage = true;
                     }

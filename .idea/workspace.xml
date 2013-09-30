@@ -5,6 +5,7 @@
       <profile>
         <option name="device" value="Nexus 7" />
         <option name="deviceConfiguration" value="Landscape" />
+        <option name="localeLanguage" value="en" />
         <option name="targetHashString" value="android-17" />
         <option name="theme" value="Theme" />
       </profile>
@@ -23,6 +24,7 @@
       </GlobalState>
     </option>
     <device-configurations>
+      <entry key="file://$PROJECT_DIR$/res/drawable-xhdpi/roundedcorners.xml" value="Landscape" />
       <entry key="file://$PROJECT_DIR$/res/layout/main.xml" value="Landscape" />
     </device-configurations>
   </component>
@@ -31,29 +33,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="25354edf-4697-4b75-b9e9-de1ef3816c4b" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/.idea/libraries/google_play_services.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/layout/main2.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/AndroidManifest.xml" afterPath="$PROJECT_DIR$/AndroidManifest.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/assets/Montserrat-Regular.ttf" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/values/colors.xml" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/res/drawable-xhdpi/roundedcorners.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" afterPath="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/coketruck.iml" afterPath="$PROJECT_DIR$/coketruck.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/layout/main.xml" afterPath="$PROJECT_DIR$/res/layout/main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/modules.xml" afterPath="$PROJECT_DIR$/.idea/modules.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/project.properties" afterPath="$PROJECT_DIR$/project.properties" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/values/strings.xml" afterPath="$PROJECT_DIR$/res/values/strings.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="coketruck.iws" />
     <ignored path=".idea/workspace.xml" />
     <file path="$PROJECT_DIR$/../processing/src/uk/co/images/coketruck/coketruck.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379506182419" ignored="false" />
-    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379591117698" ignored="false" />
+    <file path="/MainActivity.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1380033904612" ignored="false" />
     <file path="/fragment.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1378829955868" ignored="false" />
-    <file path="/main.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1377091685615" ignored="false" />
+    <file path="/main.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1380029217130" ignored="false" />
     <file path="$PROJECT_DIR$/src/co/uk/images/coketruck/GetGifFromNetwork.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1375197690207" ignored="false" />
-    <file path="/Dummy.txt" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379437851035" ignored="false" />
+    <file path="/Dummy.txt" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1380534045266" ignored="false" />
     <file path="$PROJECT_DIR$/../processing/src/uk/co/images/coketruck/Button.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379504378826" ignored="false" />
     <file path="/Button.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379504262700" ignored="false" />
     <file path="/coketruck.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1379506179714" ignored="false" />
-    <file path="/strings.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1377091577789" ignored="false" />
+    <file path="/strings.xml" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1380023526908" ignored="false" />
     <file path="/PFrame.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1377189283091" ignored="false" />
     <file path="$PROJECT_DIR$/../processing/src/com/dansd/FilterTests/FilterPImage.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1378396734013" ignored="false" />
     <file path="$PROJECT_DIR$/../processing/src/com/dansd/FilterTests/FilterTests.java" changelist="25354edf-4697-4b75-b9e9-de1ef3816c4b" time="1378396528337" ignored="false" />
@@ -167,39 +166,40 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="MainActivity.java" pinned="false" current="false" current-in-tab="false">
+      <file leaf-file-name="MainActivity.java" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="62" column="23" selection-start="2402" selection-end="2402" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="imports" expanded="true" />
-                <element signature="e#1835#2310#0" expanded="true" />
-                <element signature="e#2299#2300#0" expanded="true" />
-                <element signature="e#4000#4974#0" expanded="true" />
-                <element signature="e#4188#4948#0" expanded="true" />
-                <element signature="e#4929#4930#0" expanded="true" />
-                <element signature="e#4963#4964#0" expanded="true" />
-              </folding>
+            <state line="91" column="86" selection-start="3758" selection-end="3758" vertical-scroll-proportion="0.037082817">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="roundedcorners.xml" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/drawable-xhdpi/roundedcorners.xml">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="6" column="60" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
       <file leaf-file-name="main.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-          <provider editor-type-id="android-designer">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="45" column="78" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0">
+          <provider editor-type-id="text-editor">
+            <state line="54" column="59" selection-start="2757" selection-end="2757" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
+          <provider selected="true" editor-type-id="android-designer">
+            <state />
+          </provider>
         </entry>
       </file>
-      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="AndroidManifest.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="12" column="54" selection-start="702" selection-end="702" vertical-scroll-proportion="0.23017903">
+            <state line="10" column="65" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -208,7 +208,7 @@
       <file leaf-file-name="strings.xml" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="28" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+            <state line="13" column="111" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -233,19 +233,21 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/DisplayGIF.java" />
+        <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/PFrame.java" />
+        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
+        <option value="$PROJECT_DIR$/res/layout/roundedcorners.xml" />
         <option value="$PROJECT_DIR$/res/values/strings.xml" />
         <option value="$PROJECT_DIR$/res/layout/main.xml" />
-        <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/PFrame.java" />
+        <option value="$PROJECT_DIR$/res/drawable-xhdpi/roundedcorners.xml" />
         <option value="$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java" />
-        <option value="$PROJECT_DIR$/AndroidManifest.xml" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="259" />
-    <option name="y" value="39" />
-    <option name="width" value="1293" />
-    <option name="height" value="930" />
+    <option name="x" value="422" />
+    <option name="y" value="22" />
+    <option name="width" value="1680" />
+    <option name="height" value="955" />
   </component>
   <component name="ProjectInspectionProfilesVisibleTreeState">
     <entry key="Project Default">
@@ -321,7 +323,43 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="layout" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -343,6 +381,20 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="coketruck" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="assets" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
         </subPane>
       </pane>
       <pane id="PackagesPane" />
@@ -357,8 +409,8 @@
     <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
     <property name="options.lastSelected" value="project.propVCSSupport.Mappings" />
-    <property name="last_opened_file_path" value="$USER_HOME$/android/sdk/extras/google/google_play_services/libproject/google-play-services_lib/libs/google-play-services.jar!/" />
-    <property name="AndroidLayoutSelectedEditor" value="text-editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="AndroidLayoutSelectedEditor" value="android-designer" />
     <property name="project.structure.side.proportion" value="0.2" />
     <property name="MemberChooser.copyJavadoc" value="false" />
     <property name="GoToClass.toSaveIncludeLibraries" value="false" />
@@ -378,6 +430,10 @@
     </key>
     <key name="CreateClassDialog.RecentsKey">
       <recent name="co.uk.images.coketruck" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/assets" />
+      <recent name="$PROJECT_DIR$/res/drawable-xhdpi" />
     </key>
   </component>
   <component name="RunManager" selected="Android Application.coketruck">
@@ -556,7 +612,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="259" y="39" width="1293" height="930" extended-state="0" />
+    <frame x="422" y="22" width="1680" height="955" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -567,20 +623,20 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.50032914" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28772378" sideWeight="0.49967083" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Android" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.29553264" sideWeight="0.49967083" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25180432" sideWeight="0.6479042" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3520958" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32854864" sideWeight="0.6474359" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.41643453" sideWeight="0.68616265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.31383738" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.18181819" sideWeight="0.6474359" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.17176634" sideWeight="0.68616265" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.1766342" sideWeight="0.68616265" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Preview" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32667732" sideWeight="0.71137726" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32948717" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32820514" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32694763" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -650,25 +706,10 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="93" selection-start="901" selection-end="901" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="72" column="53" selection-start="2069" selection-end="2069" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1835#2310#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#4000#4974#0" expanded="true" />
-            <element signature="e#4188#4948#0" expanded="true" />
-            <element signature="e#4929#4930#0" expanded="true" />
-            <element signature="e#4963#4964#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -680,13 +721,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="14" column="42" selection-start="504" selection-end="504" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
@@ -699,15 +740,7 @@
     <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="15" selection-start="359" selection-end="359" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1835#2310#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#4000#4974#0" expanded="true" />
-            <element signature="e#4188#4948#0" expanded="true" />
-            <element signature="e#4929#4930#0" expanded="true" />
-            <element signature="e#4963#4964#0" expanded="true" />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -719,13 +752,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/android/sdk/platforms/android-17/android.jar!/java/io/IOException.class">
@@ -744,48 +777,50 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/layout/main2.xml">
-      <provider editor-type-id="android-designer">
-        <state />
-      </provider>
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
       <provider editor-type-id="android-designer">
         <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="45" column="78" selection-start="2144" selection-end="2144" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/values/strings.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="28" selection-start="164" selection-end="164" vertical-scroll-proportion="0.0">
+        <state line="13" column="111" selection-start="625" selection-end="625" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="23" selection-start="2402" selection-end="2402" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#1835#2310#0" expanded="true" />
-            <element signature="e#2299#2300#0" expanded="true" />
-            <element signature="e#4000#4974#0" expanded="true" />
-            <element signature="e#4188#4948#0" expanded="true" />
-            <element signature="e#4929#4930#0" expanded="true" />
-            <element signature="e#4963#4964#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/AndroidManifest.xml">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="54" selection-start="702" selection-end="702" vertical-scroll-proportion="0.23017903">
+        <state line="10" column="65" selection-start="593" selection-end="593" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/layout/main.xml">
+      <provider editor-type-id="text-editor">
+        <state line="54" column="59" selection-start="2757" selection-end="2757" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider selected="true" editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/drawable-xhdpi/roundedcorners.xml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="60" selection-start="300" selection-end="300" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="android-designer">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/co/uk/images/coketruck/MainActivity.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="91" column="86" selection-start="3758" selection-end="3758" vertical-scroll-proportion="0.037082817">
           <folding />
         </state>
       </provider>

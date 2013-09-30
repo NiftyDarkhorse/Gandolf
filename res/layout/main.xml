@@ -12,36 +12,55 @@
                android:contentDescription="Coke logo"
                android:layout_width="fill_parent"
                android:layout_height="fill_parent"
-               android:translationX="80px"
-               android:translationY="-250px"
+               android:translationX="300dp"
+               android:translationY="200dp"
                android:scaleX="0.3"
                android:scaleY="0.3">
 
     </ImageView>
-    <ImageButton android:src="@drawable/email"
-                 android:id="@+id/emailButton"
-                     android:contentDescription="Email logo"
-                     android:layout_width="300px"
-                     android:layout_height="300px"
-                     android:background="@android:color/transparent"
-                     android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-                     android:layout_marginTop="160dp">
-    </ImageButton>
+
     <TextView
             android:id="@+id/emailText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/email"
-            android:textSize="35sp"
+            android:text="@string/shareandsave"
+            android:textSize="45sp"
             android:textColor="#ffffff"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="585dp"
-            android:layout_alignParentTop="true" android:layout_marginTop="220dp">
+            android:layout_alignParentLeft="true" android:layout_marginLeft="372dp"
+            android:layout_alignParentTop="true" android:layout_marginTop="50dp"
+            android:shadowColor="@color/black"
+            android:shadowRadius="2.0"
+            android:shadowDx="1"
+            android:shadowDy="1">
     </TextView>
+    <TextView android:id="@+id/textView" android:layout_width="430dp" android:layout_height="wrap_content"
+              android:text="@string/save" android:textSize="20sp" android:textColor="#ffffff"
+              android:layout_alignParentLeft="true" android:layout_marginLeft="375dp"
+              android:layout_alignParentTop="true" android:layout_marginTop="110dp"
+              android:shadowColor="@color/black"
+              android:shadowRadius="2.0"
+              android:shadowDx="1"
+              android:shadowDy="1"/>
     <EditText
-            android:id="@+id/emailEdit"
-            android:layout_width="350px"
+            android:id="@+id/nameEdit"
+            android:layout_width="289dp"
             android:layout_height="60px"
-            android:background="@color/whitet"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="585dp"
-            android:layout_alignParentTop="true" android:layout_marginTop="280dp"></EditText>
+            android:background="#ffffff"
+            android:layout_alignParentLeft="true" android:layout_marginLeft="375dp" android:layout_alignParentTop="true"
+            android:layout_marginTop="190dp" android:hint="@string/tellusname"
+            android:paddingLeft="10dp" android:textColor="#626262" android:textColorHint="#b4b4b4"></EditText>
+
+    <EditText android:id="@+id/emailEdit" android:layout_width="289dp" android:layout_height="60px"
+              android:background="#ffffff" android:layout_alignParentLeft="true" android:layout_marginLeft="375dp"
+              android:layout_alignParentTop="true" android:layout_marginTop="250dp" android:hint="@string/youremail"
+              android:paddingLeft="10dp" android:textColor="#626262" android:textColorHint="#b4b4b4"/>
+    <Button
+            android:layout_width="120dp"
+            android:layout_height="60dp"
+            android:text="SUBMIT"
+            android:id="@+id/emailButton"
+            android:background = "@drawable/roundedcorners"
+            android:layout_alignLeft="@+id/emailText" android:layout_alignParentTop="true"
+            android:layout_marginTop="320dp" android:textColor="#FFFFFF"
+            android:textSize="20sp" android:layout_marginLeft="3dp"/>
 </RelativeLayout>
