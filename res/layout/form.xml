@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="match_parent">
+    <TextView android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="@string/formtext"
+              android:textSize="32dp" android:layout_marginBottom="20dp" android:textColor="#ffffff"></TextView>
+    <TextView android:layout_width="414dp"
+              android:layout_height="wrap_content"
+              android:text="@string/formsub" android:layout_marginBottom="20dp" android:textSize="19dp"
+              android:textColor="#ffffff"></TextView>
+    <EditText android:id="@+id/nameField"
+              android:layout_width="260dp"
+              android:layout_height="40dp" android:layout_marginBottom="8dp" android:hint="Ваше имя..."
+              android:background="#ffffff" android:textSize="15dp" android:textColor="#333333"></EditText>
+    <EditText android:id="@+id/emailField"
+              android:layout_width="260dp"
+              android:layout_height="40dp" android:layout_marginBottom="8dp"
+              android:hint="Ваш адрес электронной... почты ..." android:background="#ffffff" android:textSize="15dp"
+              android:textColor="#333333"></EditText>
+    <EditText android:id="@+id/captionField"
+              android:layout_width="345dp"
+              android:layout_height="160dp" android:hint="Ваша подпись..." android:background="#ffffff"
+              android:textSize="15dp" android:textColor="#333333"></EditText>
+
+</LinearLayout>
