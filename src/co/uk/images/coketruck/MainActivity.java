@@ -9,12 +9,7 @@ import android.view.Window;
 import android.webkit.WebView;
 import android.widget.*;
 
-import com.pusher.client.Pusher;
-import com.pusher.client.channel.Channel;
-import com.pusher.client.channel.SubscriptionEventListener;
-import com.pusher.client.connection.ConnectionState;
-import com.pusher.client.connection.ConnectionStateChange;
-import com.pusher.client.connection.ConnectionEventListener;
+import com.dansd.UDP.Server;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
 import org.apache.http.client.HttpClient;
@@ -22,10 +17,9 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.util.EntityUtils;
 
-import java.io.IOException;
+import java.io.*;
 
 public class MainActivity extends Activity {
-    Pusher pusher;
     RelativeLayout ll;
     Typeface rt;
     public boolean newGif = false;
@@ -33,6 +27,7 @@ public class MainActivity extends Activity {
     boolean gotImage = false;
     private boolean subscribed;
     private boolean gotForm;
+    private AppServer udpServer;
 
     @Override
     public void onCreate(Bundle savedInstanceState) {
@@ -40,11 +35,42 @@ public class MainActivity extends Activity {
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         rt = Typeface.createFromAsset(this.getAssets(), "Montserrat-Regular.ttf");
         setContentView(R.layout.setone);
+        udpServer = new AppServer(9876);
+        udpServer.listen();
         setButtonListenerOne();
-        if (!subscribed){
-            this.enablePusher();
-        }
     }
+
+    @Override
+    protected void onPause() {
+        this.onStop();
+    }
+
+    /**
+     * Subclass of Server, to listen for UDP packets
+     */
+    private class AppServer extends Server{
+
+            public AppServer(int port) {
+                super(port);
+            }
+
+        /**
+         * Defines what to do when an UDP package arrives
+         * @param reqString the body of the request
+         * @return the response byte array
+         */
+            @Override
+            public byte[] onRequest(byte[] reqString) {
+                System.out.println(lastIP);
+                onImageReceived(reqString);
+                return "ok".getBytes();
+
+            }
+    }
+
+    /**
+     * Initialises a listener for the first next button, which takes the user to the form
+     */
 
     private void setButtonListenerOne() {
         ImageButton next1 = (ImageButton) this.findViewById(R.id.next);
@@ -59,6 +85,10 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    /**
+     * Initialises a listener for the second next button, which takes the user to the confirmation view
+     */
     private void setButtonListenerTwo() {
         ImageButton next2 = (ImageButton) this.findViewById(R.id.next2);
         next2.setOnClickListener(new View.OnClickListener() {
@@ -72,8 +102,12 @@ public class MainActivity extends Activity {
             }
         });
     }
+
+    /**
+     * Initialises a listener for the back button, which takes the user to the initial view
+     */
     private void setButtonListenerThree() {
-        ImageButton next2 = (ImageButton) this.findViewById(R.id.next2);
+        ImageButton next2 = (ImageButton) this.findViewById(R.id.back);
         next2.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 gotForm = false;
@@ -84,6 +118,12 @@ public class MainActivity extends Activity {
         });
     }
 
+    /**
+     * Sets up a WebView based on the gif url it received, and positions it according to its scroll state
+     * @param url A GIF URL
+     * @param scrolled Whether the frame shown is the one in the top or the bottom
+     * @return the formatted WebView object
+     */
     private WebView generateWebView(String url, boolean scrolled) {
         WebView view = new WebView(this);
         RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(toDp(320), toDp(480));
@@ -92,18 +132,22 @@ public class MainActivity extends Activity {
         view.loadUrl(url);
 
         return view;
-//        view.setWebViewClient(new WebViewClient() {
-//            public void onPageFinished(WebView view, String url) {
-//                view.scrollTo(0, 240);
-//            }
-//        });
     }
+
+    /**
+     * Converts density-indepent pixels into actual screen pixels.
+     * @param measure the value in dp
+     * @return the value in px
+     */
     private int toDp(int measure){
         final float scale = this.getResources().getDisplayMetrics().density;
         int pixels = (int) (measure * scale + 0.5f);
         return pixels;
     }
 
+    /**
+     * Asynctask subclass to send request for email
+     */
     protected class GetURL extends AsyncTask<String,Void,Void>{
 
         @Override
@@ -121,7 +165,6 @@ public class MainActivity extends Activity {
                     response = EntityUtils.toString(resEntityGet);
                 }
             } catch (IOException e) {
-
                 e.printStackTrace();  //To change body of catch statement use File | Settings | File Templates.
             }
 
@@ -135,45 +178,38 @@ public class MainActivity extends Activity {
         }
 
     }
-    protected void enablePusher(){
-        pusher = new Pusher("c0a25a463fbbf294a4a8");
-        pusher.connect(new ConnectionEventListener() {
-            @Override
-            public void onConnectionStateChange(ConnectionStateChange change) {
-            }
 
-            @Override
-            public void onError(String message, String code, Exception e) {
-            }
-
-        }, ConnectionState.ALL);
-
-        Channel channel = pusher.subscribe("gifs");
-        subscribed = true;
-        channel.bind("giffinish", new SubscriptionEventListener() {
-
-            @Override
-            public void onEvent(String channel, String event, final String data) {
-                MainActivity.this.runOnUiThread(new Runnable() {
-                    public void run() {
-                        newGif = true;
-                        String gifURL=data.replace("\"","");
-                        sessionID = gifURL;
-                        RelativeLayout frame1= (RelativeLayout) findViewById(R.id.frame1);
-                        RelativeLayout frame2= (RelativeLayout) findViewById(R.id.frame2);
-                        String url = "http://cocacolahappiness.s3-website-eu-west-1.amazonaws.com/"+gifURL+".gif";
-                        WebView wb = generateWebView(url, true);
-                        frame1.addView(wb, 0);
-                        frame1.setRotation(-15);
-                        WebView second = generateWebView(url, false);
-                        frame2.addView(second, 0);
-                        frame2.setRotation(15);
-                        gotImage = true;
-                    }
-                });
+    /**
+     * Method that is executed when a signal from the recorder is caught
+     * @param data the byte array coming from the recorder
+     */
+    private void onImageReceived(final byte[] data){
+        MainActivity.this.runOnUiThread(new Runnable() {
+            public void run() {
+                newGif = true;
+                String dataString = new String(data);
+                String url = dataString.split("&")[0];
+                sessionID = dataString.split("&")[1].substring(0,13);
+                System.out.println(sessionID);
+                RelativeLayout frame1= (RelativeLayout) findViewById(R.id.frame1);
+                RelativeLayout frame2= (RelativeLayout) findViewById(R.id.frame2);
+                WebView wb = generateWebView(url, true);
+                System.out.println("generating view change");
+                frame1.addView(wb, 0);
+                frame1.setRotation(-15);
+                WebView second = generateWebView(url, false);
+                frame2.addView(second, 0);
+                frame2.setRotation(15);
+                frame1.invalidate();
+                frame2.invalidate();
+                gotImage = true;
             }
         });
     }
+
+    /**
+     * Begins the email sending process, by sending a request to a web server.
+     */
     private void initEmailSending() {
         EditText emailField = (EditText) findViewById(R.id.emailField);
         EditText nameField = (EditText) findViewById(R.id.nameField);
@@ -193,4 +229,5 @@ public class MainActivity extends Activity {
             MainActivity.this.setContentView(R.layout.tickview);
         }
     }
+
 }

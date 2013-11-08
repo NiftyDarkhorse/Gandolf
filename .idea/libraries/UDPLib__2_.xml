@@ -1,7 +1,7 @@
 <component name="libraryTable">
-  <library name="pusher">
+  <library name="UDPLib (2)">
     <CLASSES>
-      <root url="jar://$PROJECT_DIR$/libs/pusher.jar!/" />
+      <root url="jar://$PROJECT_DIR$/libs/UDPLib.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
